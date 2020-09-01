@@ -37,7 +37,7 @@ class CompatibilityScorer:
     def score_abi(self, abi):
         py_version_nodot = ''.join(self.py_version.split('.')[:2])
         # Are there other valid options here?
-        d = {'cp%sm' % py_version_nodot: 3,  # Is the m reliable?
+        d = {'cp%s' % py_version_nodot: 3,  # Is the m reliable?
             'abi3': 2, 'none': 1}
         return max(d.get(a, 0) for a in abi.split('.'))
 
